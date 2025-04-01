@@ -7,6 +7,6 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=25021311
+      - POSTGRES_USER=seu_username
+      - POSTGRES_PASSWORD=sua_senha
       - POSTGRES_DB=gestao_vagas
