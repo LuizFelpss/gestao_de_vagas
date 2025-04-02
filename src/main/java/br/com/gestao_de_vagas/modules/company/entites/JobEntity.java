@@ -1,6 +1,7 @@
 package br.com.gestao_de_vagas.modules.company.entites;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -17,13 +18,15 @@ public class JobEntity {
     private String job;
     private String description;
     private String benefits;
+
+    @NotBlank(message = "você precisar colocar o level da vaga")
     private String level;
 
     @ManyToOne()
     @JoinColumn(name = "company_id", insertable = false, updatable = false)
     private CompanyEntity companyEntity;
 
-    @Column(name = "company_id")
+    @Column(name = "company_id", nullable = false)
     private UUID companyId;
 
     @CreationTimestamp
