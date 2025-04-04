@@ -12,4 +12,5 @@ import java.util.UUID;
 public interface CompanyRepository extends JpaRepository<CompanyEntity, UUID> {
 
     Optional<CompanyEntity> findByUsernameOrEmail(@NotBlank @Pattern(regexp = "\\S+", message = "O campo [username] não deve conter espaço") String username, @Email(message = "O campo [email] deve conter um e-mail válido") String email);
+    Optional<CompanyEntity> findByUsername(String username);
 }
